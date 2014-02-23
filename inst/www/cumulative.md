@@ -21,45 +21,45 @@
 <tbody>
   <tr>
    <td> Ed </td>
-   <td>  42 </td>
-   <td>  65 </td>
-   <td> 0.6462 </td>
+   <td>  43 </td>
+   <td>  67 </td>
+   <td> 0.6418 </td>
   </tr>
   <tr>
    <td> Charles </td>
-   <td>  83 </td>
-   <td> 135 </td>
-   <td> 0.6148 </td>
+   <td>  84 </td>
+   <td> 137 </td>
+   <td> 0.6131 </td>
   </tr>
   <tr>
    <td> Jeff </td>
-   <td>  42 </td>
-   <td>  78 </td>
-   <td> 0.5385 </td>
+   <td>  44 </td>
+   <td>  80 </td>
+   <td> 0.5500 </td>
+  </tr>
+  <tr>
+   <td> Mike </td>
+   <td>  56 </td>
+   <td> 112 </td>
+   <td> 0.5000 </td>
   </tr>
   <tr>
    <td> Roland </td>
    <td>  61 </td>
-   <td> 123 </td>
-   <td> 0.4959 </td>
-  </tr>
-  <tr>
-   <td> Mike </td>
-   <td>  54 </td>
-   <td> 110 </td>
-   <td> 0.4909 </td>
+   <td> 125 </td>
+   <td> 0.4880 </td>
   </tr>
   <tr>
    <td> Kenny </td>
    <td>  42 </td>
-   <td>  90 </td>
-   <td> 0.4667 </td>
+   <td>  92 </td>
+   <td> 0.4565 </td>
   </tr>
   <tr>
    <td> Team </td>
-   <td> 175 </td>
-   <td> 326 </td>
-   <td> 0.5368 </td>
+   <td> 178 </td>
+   <td> 332 </td>
+   <td> 0.5361 </td>
   </tr>
 </tbody>
 </table>
@@ -79,26 +79,32 @@
   <tr>
    <td> Ed </td>
    <td>  25 </td>
-   <td>  44 </td>
-   <td> 0.5682 </td>
+   <td>  45 </td>
+   <td> 0.5556 </td>
   </tr>
   <tr>
    <td> Mike </td>
-   <td>  31 </td>
-   <td>  60 </td>
-   <td> 0.5167 </td>
+   <td>  32 </td>
+   <td>  61 </td>
+   <td> 0.5246 </td>
   </tr>
   <tr>
    <td> Kenny </td>
-   <td>  19 </td>
-   <td>  40 </td>
-   <td> 0.4750 </td>
+   <td>  20 </td>
+   <td>  41 </td>
+   <td> 0.4878 </td>
   </tr>
   <tr>
    <td> Jeff </td>
-   <td>  17 </td>
-   <td>  36 </td>
-   <td> 0.4722 </td>
+   <td>  18 </td>
+   <td>  37 </td>
+   <td> 0.4865 </td>
+  </tr>
+  <tr>
+   <td> Charles </td>
+   <td>  32 </td>
+   <td>  68 </td>
+   <td> 0.4706 </td>
   </tr>
   <tr>
    <td> Rick </td>
@@ -107,22 +113,16 @@
    <td> 0.4643 </td>
   </tr>
   <tr>
-   <td> Charles </td>
-   <td>  31 </td>
-   <td>  67 </td>
-   <td> 0.4627 </td>
-  </tr>
-  <tr>
    <td> Roland </td>
-   <td>  14 </td>
-   <td>  53 </td>
-   <td> 0.2642 </td>
+   <td>  15 </td>
+   <td>  54 </td>
+   <td> 0.2778 </td>
   </tr>
   <tr>
    <td> Team </td>
-   <td> 150 </td>
-   <td> 328 </td>
-   <td> 0.4573 </td>
+   <td> 155 </td>
+   <td> 334 </td>
+   <td> 0.4641 </td>
   </tr>
 </tbody>
 </table>
@@ -144,46 +144,46 @@
 <tbody>
   <tr>
    <td> Charles </td>
-   <td> 291.0 </td>
-   <td> 30.72 </td>
-   <td> 16.76 </td>
-   <td> 15.53 </td>
+   <td> 291.1 </td>
+   <td> 30.26 </td>
+   <td> 16.78 </td>
+   <td> 15.55 </td>
    <td> 32.22 </td>
    <td> 118 </td>
   </tr>
   <tr>
    <td> Ed </td>
-   <td> 292.7 </td>
-   <td> 24.43 </td>
-   <td> 17.55 </td>
-   <td> 15.29 </td>
+   <td> 292.9 </td>
+   <td> 24.78 </td>
+   <td> 17.42 </td>
+   <td> 15.39 </td>
    <td> 25.08 </td>
    <td>  89 </td>
   </tr>
   <tr>
    <td> Mike </td>
-   <td> 286.9 </td>
-   <td> 25.28 </td>
-   <td> 17.77 </td>
-   <td> 14.72 </td>
+   <td> 286.5 </td>
+   <td> 24.87 </td>
+   <td> 17.79 </td>
+   <td> 14.71 </td>
    <td> 27.36 </td>
    <td> 100 </td>
   </tr>
   <tr>
    <td> Jeff </td>
-   <td> 274.1 </td>
-   <td> 26.22 </td>
-   <td> 18.92 </td>
-   <td> 13.10 </td>
+   <td> 274.8 </td>
+   <td> 25.51 </td>
+   <td> 18.86 </td>
+   <td> 13.21 </td>
    <td> 18.81 </td>
-   <td>  67 </td>
+   <td>  77 </td>
   </tr>
   <tr>
    <td> Kenny </td>
-   <td> 275.1 </td>
-   <td> 30.93 </td>
-   <td> 19.00 </td>
-   <td> 12.85 </td>
+   <td> 275.8 </td>
+   <td> 30.17 </td>
+   <td> 19.20 </td>
+   <td> 12.79 </td>
    <td> 25.27 </td>
    <td> 114 </td>
   </tr>
@@ -198,19 +198,19 @@
   </tr>
   <tr>
    <td> Roland </td>
-   <td> 271.9 </td>
-   <td> 40.21 </td>
-   <td> 19.02 </td>
-   <td> 12.18 </td>
+   <td> 272.4 </td>
+   <td> 39.46 </td>
+   <td> 19.04 </td>
+   <td> 12.24 </td>
    <td> 21.50 </td>
    <td>  55 </td>
   </tr>
   <tr>
    <td> Team </td>
-   <td> 282.7 </td>
-   <td> 30.98 </td>
-   <td> 18.10 </td>
-   <td> 13.91 </td>
+   <td> 282.9 </td>
+   <td> 30.54 </td>
+   <td> 18.11 </td>
+   <td> 13.93 </td>
    <td> 32.22 </td>
    <td> 118 </td>
   </tr>
@@ -232,8 +232,8 @@
   <tr>
    <td> Roland Ed </td>
    <td>  8 </td>
-   <td>  9 </td>
-   <td> 0.8889 </td>
+   <td> 10 </td>
+   <td> 0.8000 </td>
   </tr>
   <tr>
    <td> Jeff Charles </td>
@@ -242,22 +242,22 @@
    <td> 0.7059 </td>
   </tr>
   <tr>
+   <td> Jeff Ed </td>
+   <td>  7 </td>
+   <td> 10 </td>
+   <td> 0.7000 </td>
+  </tr>
+  <tr>
    <td> Ed Kenny </td>
    <td>  6 </td>
    <td>  9 </td>
    <td> 0.6667 </td>
   </tr>
   <tr>
-   <td> Jeff Ed </td>
-   <td>  6 </td>
-   <td>  9 </td>
-   <td> 0.6667 </td>
-  </tr>
-  <tr>
    <td> Mike Charles </td>
-   <td> 17 </td>
-   <td> 26 </td>
-   <td> 0.6538 </td>
+   <td> 18 </td>
+   <td> 27 </td>
+   <td> 0.6667 </td>
   </tr>
   <tr>
    <td> Ed Charles </td>
@@ -284,12 +284,6 @@
    <td> 0.5833 </td>
   </tr>
   <tr>
-   <td> Kenny Charles </td>
-   <td> 11 </td>
-   <td> 20 </td>
-   <td> 0.5500 </td>
-  </tr>
-  <tr>
    <td> Charles Rick </td>
    <td>  7 </td>
    <td> 13 </td>
@@ -297,9 +291,15 @@
   </tr>
   <tr>
    <td> Jeff Mike </td>
-   <td>  9 </td>
-   <td> 18 </td>
-   <td> 0.5000 </td>
+   <td> 10 </td>
+   <td> 19 </td>
+   <td> 0.5263 </td>
+  </tr>
+  <tr>
+   <td> Kenny Charles </td>
+   <td> 11 </td>
+   <td> 21 </td>
+   <td> 0.5238 </td>
   </tr>
   <tr>
    <td> Kenny Jeff </td>
@@ -352,8 +352,8 @@
   <tr>
    <td> Roland Kenny </td>
    <td>  7 </td>
-   <td> 22 </td>
-   <td> 0.3182 </td>
+   <td> 23 </td>
+   <td> 0.3043 </td>
   </tr>
 </tbody>
 </table>
