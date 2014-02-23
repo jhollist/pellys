@@ -1,0 +1,24 @@
+```{r options, echo=FALSE}
+library(pellys)
+options(width = 98)
+```
+Pelly's Players Stats (2011-2013)
+========================================================
+
+# Cumulative Stats
+
+```{r echo=FALSE}
+stats301<-readPellysData("301")
+stats301_noNA<-na.omit(stats301[stats301$Name!="Forfeit",])
+stats301_noNA[,2]<-as.Date(stats301_noNA[,2], "%m/%d/%Y")
+statsCricket<-readPellysData("cricket")
+statsCricket_noNA<-na.omit(statsCricket)
+statsCricket_noNA[,2]<-as.Date(statsCricket_noNA[,2], "%m/%d/%Y")
+```
+
+You can also embed plots, for example:
+
+```{r fig.width=7, fig.height=6}
+plot(cars)
+```
+

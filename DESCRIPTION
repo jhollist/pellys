@@ -4,15 +4,15 @@ Title: Dart Stats for Pelly's Players'
 Version: 1.0
 Date: 2014-02-23
 Authors@R: person(given = "Jeffrey", family = "Hollister",
-                  role = c("aut","cre"),
-                  email = "jeff.w.hollister@gmail.com")
+    role = c("aut","cre"),
+    email = "jeff.w.hollister@gmail.com")
 URL: http://www.github.com/jhollist/pellys
 BugReports: https://www.github.com/jhollist/pellys/issues
 Maintainer: Jeffrey W. Hollister <jeff.w.hollister@gmail.com>
 License: GPL3
 Description: This package provides utilities to read in and process to Google
-Doc spreadsheets that store dart scores for the Pelly's Players Dart Team.
-These are used to output HTML reports for team scores.
+    Doc spreadsheets that store dart scores for the Pellys Players Dart Team.
+    These are used to output HTML reports for team scores.
 Depends:
-  RCurl,
-  xtable
+    RCurl,
+    xtable

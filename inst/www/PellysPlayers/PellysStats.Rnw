@@ -4,6 +4,7 @@
 \usepackage{caption}
 \usepackage[margin=0.1in]{geometry}
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 \title{Pelly\'s Players Statistics - Jan 2011 - Jan 2013}
 \author{}
 \date{}
