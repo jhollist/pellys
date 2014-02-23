@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[margin=0.1in]{geometry}
+\begin{document}
+\title{Pelly\'s Players Statistics - Jan 2011 - Jan 2013}
+\author{}
+\date{}
+\maketitle
+\vskip -3.5em
+
+<<setup, echo = FALSE, results= 'hide', message = FALSE>>=
+require(xtable)
+options(width = 98)
+library(RCurl)
+url<-getURL("https://docs.google.com/spreadsheet/pub?key=0AiV4WHc7_JnQdHVweEF3dV9CcUlNWm43MHJ5SXUwSlE&output=csv",ssl.verifypeer=FALSE)
+stats301<-read.csv(textConnection(url))
+url<-getURL("https://docs.google.com/spreadsheet/pub?key=0AiV4WHc7_JnQdG0yVUdFYVNjdnM1cGhxLWNlZ19xU1E&single=true&gid=0&output=csv",ssl.verifypeer=FALSE)
+statsCricket<-read.csv(textConnection(url))
+stats301_noNA<-na.omit(stats301[stats301$Name!="Forfeit",])
+stats301_noNA[,2]<-as.Date(stats301_noNA[,2], "%m/%d/%Y")
+stats301_noNA<-stats301_noNA[stats301_noNA$Name!="Rick",]
+statsCricket_noNA<-na.omit(statsCricket)
+statsCricket_noNA[,2]<-as.Date(statsCricket_noNA[,2], "%m/%d/%Y")
+
+winPercent301<-function(myDF)
+{
+   wins<-length(myDF$PointsRemaining[myDF$PointsRemaining==0])
+   total<-length(myDF$PointsRemaining)
+   return(data.frame(wins=wins,total=total,percent=wins/total))
+}
+
+winPercentCricket<-function(myDF)
+{
+   wins<-length(myDF$Won[myDF$Won==1])
+   total<-length(myDF$Won)
+   return(data.frame(wins=wins,total=total,percent=wins/total))
+}
+
+
+
+avg301<-function(myDF)
+{
+   startscore<-myDF$StartingScore
+   pointsremain<-myDF$PointsRemaining
+   totaldarts<-myDF$TotalDarts
+   return(data.frame(avgStartScore=mean(startscore),avgPointsRemain=mean(pointsremain),
+                     avgTotalDarts=mean(totaldarts),
+                     avgPPD=(sum(startscore)-sum(pointsremain))/sum(totaldarts),
+                     highPPD=max((startscore-pointsremain)/totaldarts),
+                     highOut=max(myDF$Out)))
+}
+
+
+cricketTeams<-paste(statsCricket_noNA$Name1,statsCricket_noNA$Name2,sep=" ")
+cricketTeams<-gsub("  "," ",cricketTeams)
+cricketTeamsNum<-as.numeric(unlist(lapply(cricketTeams,function(x) sum(strtoi(charToRaw(x),base=16)))))
+cricketTeamsName<-cricketTeams[order(cricketTeamsNum)][!duplicated(cricketTeamsNum[order(cricketTeamsNum)])]
+cricketTeams<-data.frame(cricketTeamsName,cricketTeamsNum=cricketTeamsNum[order(cricketTeamsNum)][!duplicated(cricketTeamsNum[order(cricketTeamsNum)])])
+statsCricket_noNA<-data.frame(statsCricket_noNA,cricketTeamsNum)
+statsCricket_noNA<-merge(statsCricket_noNA,cricketTeams,by="cricketTeamsNum",all.x=T)
+byPairCricket<-by(statsCricket_noNA,statsCricket_noNA$cricketTeamsName,winPercentCricket)
+byPerson301<-by(stats301_noNA,stats301_noNA$Name,winPercent301)
+byPerson301Avg<-by(stats301_noNA,stats301_noNA$Name,avg301)
+byPairCricket<-do.call("rbind",byPairCricket)
+byPerson301<-do.call("rbind",byPerson301)
+byPerson301Avg<-do.call("rbind",byPerson301Avg)
+
+
+#Player Index
+jeffInd<-as.character(statsCricket_noNA$Name1)=="Jeff"|as.character(statsCricket_noNA$Name2)=="Jeff"
+rolandInd<-as.character(statsCricket_noNA$Name1)=="Roland"|as.character(statsCricket_noNA$Name2)=="Roland"
+mikeInd<-as.character(statsCricket_noNA$Name1)=="Mike"|as.character(statsCricket_noNA$Name2)=="Mike"
+kennyInd<-as.character(statsCricket_noNA$Name1)=="Kenny"|as.character(statsCricket_noNA$Name2)=="Kenny"
+edInd<-as.character(statsCricket_noNA$Name1)=="Ed"|as.character(statsCricket_noNA$Name2)=="Ed"
+charlieInd<-as.character(statsCricket_noNA$Name1)=="Charlie"|as.character(statsCricket_noNA$Name2)=="Charlie"
+jeffCricket<-winPercentCricket(statsCricket_noNA[jeffInd,])
+rolandCricket<-winPercentCricket(statsCricket_noNA[rolandInd,])
+mikeCricket<-winPercentCricket(statsCricket_noNA[mikeInd,])
+kennyCricket<-winPercentCricket(statsCricket_noNA[kennyInd,])
+edCricket<-winPercentCricket(statsCricket_noNA[edInd,])
+charlieCricket<-winPercentCricket(statsCricket_noNA[charlieInd,])
+playerCricket<-rbind(jeffCricket,rolandCricket,mikeCricket,kennyCricket,edCricket,charlieCricket)
+row.names(playerCricket)<-c("Jeff","Roland","Mike","Kenny","Ed","Charlie")
+playerCricket<-playerCricket[order(playerCricket$percent,decreasing=T),]
+
+
+teamCricket<-winPercentCricket(statsCricket_noNA)
+row.names(teamCricket)<-"Team"
+playerCricket<-rbind(playerCricket,teamCricket)
+team301<-winPercent301(stats301_noNA)
+team301Avg<-avg301(stats301_noNA)
+byPairCricket<-by(statsCricket_noNA,statsCricket_noNA$cricketTeamsName,winPercentCricket)
+byPerson301<-by(stats301_noNA,stats301_noNA$Name,winPercent301)
+byPerson301Avg<-by(stats301_noNA,stats301_noNA$Name,avg301)
+byPairCricket<-do.call("rbind",byPairCricket)
+byPerson301<-do.call("rbind",byPerson301)
+byPerson301Avg<-do.call("rbind",byPerson301Avg)
+byPairCricket<-byPairCricket[order(byPairCricket$percent,decreasing=T),]
+byPerson301<-byPerson301[order(byPerson301$percent,decreasing=T),]
+row.names(team301)<-"Team"
+byPerson301<-rbind(byPerson301,team301)
+byPerson301Avg<-byPerson301Avg[order(byPerson301Avg$avgPPD,decreasing=T),]
+row.names(team301Avg)<-"Team"
+byPerson301Avg<-rbind(byPerson301Avg,team301Avg)
+@
+\begin{table}[htb]
+\begin{minipage}{.55\textwidth}
+\centering
+\captionof{table}{Cricket Wins}
+<<echo=FALSE,results='asis'>>=
+print(xtable(playerCricket),
+  floating=FALSE,
+  hline.after=NULL,
+  add.to.row=list(pos=list(-1,0, nrow(playerCricket)),
+  command=c('\\toprule\n','\\midrule\n','\\bottomrule\n')))
+@
+\end{minipage}
+\begin{minipage}{.35\textwidth}
+\centering
+\captionof{table}{301 Wins}
+<<echo=FALSE,results='asis'>>=
+library("xtable")
+print(xtable(byPerson301),
+  floating=FALSE,
+  hline.after=NULL,
+  add.to.row=list(pos=list(-1,0, nrow(byPerson301)),
+  command=c('\\toprule\n','\\midrule\n','\\bottomrule\n')))
+@
+\end{minipage}
+\end{table}
+
+<<StatsTables, echo = FALSE, results='asis'>>=
+avg301<-xtable(byPerson301Avg,floating=F,caption="301 Averages",hline.after=NULL,
+  add.to.row=list(pos=list(-1,0, nrow(byPerson301Avg)),
+  command=c('\\toprule\n','\\midrule\n','\\bottomrule\n')))
+pairCrick<-xtable(byPairCricket,floating=F,caption="Cricket Wins by Pairing",hline.after=NULL,
+  add.to.row=list(pos=list(-1,0, nrow(byPairCricket)),
+  command=c('\\toprule\n','\\midrule\n','\\bottomrule\n')))
+print.xtable(avg301,caption.placement="top")
+print.xtable(pairCrick,caption.placement="top")
+@
+
+\end{document}
