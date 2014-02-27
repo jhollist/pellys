@@ -8,6 +8,12 @@
 
 
 
+
+
+
+
+
+
 ### Cricket Wins By Player
 <table>
  <thead>
